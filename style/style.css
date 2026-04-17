@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #202020;
   font-family: "Inter", sans-serif;
 }
 
@@ -25,28 +25,25 @@ header {
   width: 100%;
   z-index: 1000;
 
-  /* transparência */
   background: rgba(32, 32, 32, 0.37);
-
-  /* efeito “vidro” (bem moderno) */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* sombra leve embaixo */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-
-  /* opcional: deixa mais elegante */
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* CONTAINER */
+/* evita o header cobrir o conteúdo */
+main {
+  padding-top: 100px;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* NAV */
 .nav {
   padding: 20px;
   display: flex;
@@ -55,7 +52,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* LOGO */
 .nav-logo {
   color: #0dbf19;
   font-family: "JetBrains Mono", monospace;
@@ -66,7 +62,6 @@ header {
   color: #0dbf197b;
 }
 
-/* MENU */
 .nav-menu {
   display: flex;
   gap: 20px;
@@ -78,7 +73,6 @@ header {
   color: #0dbf197b;
 }
 
-/* SOCIAL */
 .nav-social {
   display: flex;
   gap: 15px;
@@ -97,7 +91,6 @@ header {
   filter: brightness(1.2);
 }
 
-/* CORES SOCIAL */
 #ig:hover {
   color: #e1306c;
 }
@@ -117,14 +110,11 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
 }
 
 #home {
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   background-color: #202020;
 
   display: flex;
@@ -150,7 +140,6 @@ header {
   font-family: "JetBrains Mono", monospace;
 }
 
-/* TYPING */
 .typing {
   color: #0dbf19a8;
   font-family: "JetBrains Mono", monospace;
@@ -168,7 +157,6 @@ header {
 }
 
 /* STACK */
-
 .stack {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -253,98 +241,94 @@ header {
   background: rgba(13, 191, 25, 0.1);
 }
 
-#quem {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #202020da;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#projeto {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #202020;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#tecnologias {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #202020da;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* SEÇÕES */
+#quem,
+#projeto,
+#tecnologias,
 #contato {
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #202020;
-
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#quem {
+  background-color: #202020da;
+}
+#projeto {
+  background-color: #202020;
+}
+#tecnologias {
+  background-color: #202020da;
+}
+#contato {
+  background-color: #202020;
 }
 
 /* RESPONSIVO */
 @media (max-width: 1024px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-menu {
+    gap: 15px;
+    font-size: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   #home {
-    width: 80%;
     flex-direction: column;
     text-align: center;
-    padding-top: 60px;
   }
 }
 
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
   }
 
   .nav-logo {
-    font-size: 200%;
+    font-size: 180%;
   }
 
   .nav-menu {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
+    text-align: center;
   }
 
-  #home h1 {
-    font-size: 36px;
+  #home {
+    flex-direction: column;
+    text-align: center;
+    padding: 120px 20px 40px;
   }
-  #home .intro,
-  .typing {
-    font-size: 22px;
-  }
+
   .stack {
-    font-size: 40px;
+    margin-left: 0;
+    font-size: 36px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .nav-logo {
-    font-size: 160%;
+    font-size: 150%;
+  }
+
+  .nav-menu {
+    font-size: 90%;
   }
 
   #home h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   #home .intro,
@@ -353,8 +337,7 @@ header {
   }
 
   .stack {
-    font-size: 32px;
-    gap: 10px;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 30px;
   }
 }

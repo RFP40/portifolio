@@ -313,14 +313,29 @@ main {
   color: #044f9a;
 }
 
-.lucas {
-  margin-top: 20px;
-  padding-left: 15px;
-  border-left: 3px solid #0dbf19;
-  font-style: italic;
-  color: #0dbf19a8;
+.quem-info {
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
+  height: 100%;
+}
+
+.lucas {
+  margin-top: 60px;
   width: 100%;
+  text-align: center;
+
+  padding-top: 40px;
+  border-left: none;
+  border-top: 2px solid #0dbf19;
+
+  font-style: italic;
+  font-size: 20px;
+  color: #0dbf19a8;
+
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #projeto {
   background-color: #202020;
